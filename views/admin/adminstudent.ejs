@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+</head>
+<body>
+	<h1>Complaints by students</h1>
+	<table class="text-center" border="1">
+			<tr>
+				<th>Sl. no.</th>
+				<th>Name</th>
+				<th>Complaint</th>
+				<th>Token Number</th>
+				<th>Employee Alloted</th>
+				<th>Status</th>
+			<% var i=1; complain.forEach((complaint)=>{  %>
+				</tr>
+					<td> <%= i %></td>
+					<td> <%= complaint.name %> </td>
+					<td> <%= complaint.complaint %> </td>
+					<td> <%= complaint._id %> </td>
+				<% if(complaint.employee!=null) {%>
+					<td> <%= complaint.employee.name %> </td>
+				<% }else{%>
+				`	<td>
+						<form action="/admin/student/<%= complaint._id %>" method="post">
+							<select name="employee">
+							<option>Select Employee</option>
+							<% employee.forEach((emp)=>{ %>
+								<option value="<%= emp._id %>"><%= emp.name %></option>
+							<% } )%>							
+							</select>
+							<input type="submit" name="submit">
+						</form>
+						
+			        </td>
+				<% } %>
+					<td> <%= complaint.status %> </td>
+				</tr>
+			<% ++i;}) %>
+			
+		</table>
+</body>
+</html>

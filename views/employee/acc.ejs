@@ -1,0 +1,54 @@
+<!DOCTYPE html>  
+<html>
+<head>
+	<title>Home Page</title>
+</head>
+<body>
+	<a href="/employee/logout">Logout</a>
+	<h3>Name : <%= currentuser.name %></h3>
+	<h3>Employee ID : <%= currentuser.empid %></h3>
+	<h3>email ID : <%= currentuser.email%></h3>
+	<h3>Mobile Number : <%= currentuser.mobileno %></h3>
+
+	<h2>Student Complains: </h2>
+
+	<table class="text-center" border="1">
+			<tr>
+				<th>Sl. no.</th>
+				<th>Name</th>
+				<th>Complaint</th>
+				<th>Token Number</th>
+				<th>Status</th>
+			<% var i=1; currentuser.complainStudent.forEach((complaint)=>{  %>
+				</tr>
+					<td> <%= i %></td>
+					<td> <%= complaint.name %> </td>
+					<td> <%= complaint.complaint %> </td>
+					<td> <%= complaint._id %> </td>
+					<td> <%= complaint.status %> </td>
+				</tr>
+			<% ++i;}) %>
+			
+	</table>
+	<br><br>
+	<h2>Faculty Complains: </h2>
+	<table class="text-center" border="1">
+			<tr>
+				<th>Sl. no.</th>
+				<th>Name</th>
+				<th>Complaint</th>
+				<th>Token Number</th>
+				<th>Status</th>
+			<% var i=1; currentuser.complainFaculty.forEach((complaint)=>{  %>
+				</tr>
+					<td> <%= i %></td>
+					<td> <%= complaint.name %> </td>
+					<td> <%= complaint.complaint %> </td>
+					<td> <%= complaint._id %> </td>
+					<td> <%= complaint.status %> </td>
+				</tr>
+			<% ++i;}) %>
+			
+	</table>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Home Page</title>
+</head>
+<body>
+	<h2>Register New Complaint</h2>
+	<form action="/faculty/" method="post">
+		<input type="text" name="name" placeholder="Name">
+		<input type="text" name="empid" placeholder="Employee Id">
+		<input type="text" name="mobileno" placeholder="Mobile Number">
+		<input type="text" name="email" placeholder="email">
+		<input type="text-area" name="complaint" placeholder="complaint">
+		<button type="submit">Submit</button>
+	</form>
+
+	<h2>Complaint Status</h2>
+	<table class="text-center" border="1">
+			<tr>
+				<th>Sl. no.</th>
+				<th>Name</th>
+				<th>Complaint</th>
+				<th>Token Number</th>
+				<th>Status</th>
+			<% var i=1; Complaint.forEach((complaint)=>{  %>
+				</tr>
+					<td> <%= i %></td>
+					<td> <%= complaint.name %> </td>
+					<td> <%= complaint.complaint %> </td>
+					<td> <%= complaint._id %> </td>
+					<td> <%= complaint.status %> </td>
+				</tr>
+			<% ++i;}) %>
+			
+		</table>
+	
+</body>
+</html>

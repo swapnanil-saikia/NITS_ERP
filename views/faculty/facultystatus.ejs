@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+</head>
+<body>
+	<% if(status ==0){ %>
+		<h1>No such page exists!</h1>
+	<% } else { %>
+		<h1>Your complaint has been registered successfully!</h1>
+
+		<h3>Name : <span><%= newComplain.name %></span></h3>
+		<h3>Employee id : <span><%= newComplain.empid %></span></h3>
+		<h3>Mobile No.: <span><%= newComplain.mobileno %></span></h3>
+		<h3>email : <span><%= newComplain.email %></span></h3>
+		<h3>Complaint : <span><%= newComplain.complaint %></span></h3>
+		<h2>Token = <span><%= newComplain._id %></span></h3>
+	<% } %>
+	
+	
+	<a href="/faculty">Go Back</a>
+</body>
+</html>
